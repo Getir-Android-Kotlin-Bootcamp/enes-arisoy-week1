@@ -68,7 +68,7 @@ fun main() {
         var name: String = ""
         var age: Int = 0
 
-        fun getData() {
+        fun getData(name: String, age: Int) {
             println("Name: $name, Age: $age")
         }
     }
@@ -79,9 +79,26 @@ fun main() {
 
     println(person.name)
     println(person.age)
-    person.getData()
+    person.getData(person.name, person.age)
 
     println("-------------------------------------------")
 
+    /**             Inheritance
+     *  Inherit class properties and functions from one class to another.
+     *  This allows for code reuse and the creation of class hierarchies.
+     */
+    // Inheritance
+    println("Page 13 -> Inheritance")
+    class GetirParticipant : Person() {}
+
+    val participant = GetirParticipant()
+    // Name and age inherited from Person class.
+    participant.name = "Another name"
+    participant.age = 20
+    println(participant.name)
+    println(participant.age)
+    participant.getData(participant.name, participant.age)
+
+    println("-------------------------------------------")
 
 }
