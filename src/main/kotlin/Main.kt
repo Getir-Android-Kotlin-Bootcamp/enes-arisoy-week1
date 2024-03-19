@@ -253,4 +253,48 @@ fun main() {
 
     println("-------------------------------------------")
 
+    /**             Collections
+     *  Collections are objects that group multiple elements into a single unit.
+     *  They are used to store, retrieve, manipulate, and iterate over data in a structured way.
+     *  Collections Types in kotlin is -> List, Set, Map
+     *
+     *  List -> A list is an ordered collection of elements where each element has an index.
+     *  Lists in Kotlin are mutable (MutableList) or immutable (List).
+     *
+     *  Set -> A set is a collection of unique elements where order is not guaranteed.
+     *  Sets in Kotlin are mutable (MutableSet) or immutable (Set).
+     *
+     *  Map -> A map is a collection of key-value pairs, where each key is unique.
+     *  Maps in Kotlin are mutable (MutableMap) or immutable (Map).
+     */
+
+    println("Page 20 -> Collections")
+
+    // Imagine we have a data about fruits and vegetables that comes from an API.
+    val apiData = mapOf(
+        "fruits" to arrayListOf("Apple", "Banana", "Pineapple", "Watermelon"),
+        "vegetables" to arrayListOf("Carrot","Broccoli","Tomato","Spinach")
+    )
+
+    val fruits = apiData["fruits"]
+    val vegetables = apiData["vegetables"]
+
+    val fruitEndsWith = fruits?.filter {
+        it.endsWith("e")
+    }
+    println("Fruits that ends with the letter 'e' -> $fruitEndsWith")
+
+    val upperCaseVegetables = vegetables?.map {
+        it.uppercase()
+    }
+    println("Uppercase the vegetables -> $upperCaseVegetables")
+
+    println("Get all fruits: ")
+    fruits?.forEach {
+        println(it)
+    }
+
+    println("-------------------------------------------")
+
+
 }
