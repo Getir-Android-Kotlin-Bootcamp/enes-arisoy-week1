@@ -56,5 +56,32 @@ fun main() {
 
     println("-------------------------------------------")
 
+    /**
+     *              Classes
+     *   Classes and objects are used to represent objects in the real world.
+     *   It defines the properties (fields) and behaviors (methods) that objects of that class will have.
+     *   A property is basically a variable that belongs to the class.
+     */
+    println("Page 12 -> Classes")
+
+    open class Person {
+        var name: String = ""
+        var age: Int = 0
+
+        fun getData() {
+            println("Name: $name, Age: $age")
+        }
+    }
+    // Create an instance of the Person class
+    val person = Person()
+    person.name = "Enes"
+    person.age = 24
+
+    println(person.name)
+    println(person.age)
+    person.getData()
+
+    println("-------------------------------------------")
+
 
 }
