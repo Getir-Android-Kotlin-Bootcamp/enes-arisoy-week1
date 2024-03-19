@@ -273,7 +273,7 @@ fun main() {
     // Imagine we have a data about fruits and vegetables that comes from an API.
     val apiData = mapOf(
         "fruits" to arrayListOf("Apple", "Banana", "Pineapple", "Watermelon"),
-        "vegetables" to arrayListOf("Carrot","Broccoli","Tomato","Spinach")
+        "vegetables" to arrayListOf("Carrot", "Broccoli", "Tomato", "Spinach")
     )
 
     val fruits = apiData["fruits"]
@@ -296,5 +296,42 @@ fun main() {
 
     println("-------------------------------------------")
 
+    /**             Nullable and Null Check
+     *  Nullable types allow variables to hold null values, indicating the absence of a value.
+     *  This helps in handling cases where the value of a variable can be null, preventing null pointer exceptions.
+     */
+
+    println("Page 21 -> Nullable and Null Check")
+
+    fun checkNullable(nullInt: Int?) {
+        if (nullInt != null) {
+            println("This variable is not null.")
+        } else {
+            println("This variable is null.")
+        }
+        // Or you can do this like Kotlin style.
+        nullInt?.let {
+            println("This variable is not null.")
+        } ?: run {
+            println("This variable is null.")
+        }
+    }
+    checkNullable(2)
+    println()
+    /**
+     * In the scenario where fruits and vegetables are retrieved from the API,
+     * let's assume there is occasionally a null value.
+     * We need to perform a null check to prevent our application from crashing.
+     */
+
+    val listWithNulls: List<String?> = listOf("Apple", "Watermelon", null, "Banana")
+    listWithNulls.forEach {fruit ->
+        fruit?.let {
+            // Check if there is a null value and don't display it.
+            println(it)
+        }
+    }
+
+    println("-------------------------------------------")
 
 }
