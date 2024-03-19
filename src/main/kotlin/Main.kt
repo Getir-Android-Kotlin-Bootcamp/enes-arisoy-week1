@@ -136,6 +136,12 @@ fun main() {
      */
     println("Page 15 -> Control Flow")
 
+    /**
+     * Imagine you have a gym that offers discounts to its customers.
+     * The discount percentage varies depending on the customer's age
+     * and whether they are a member of the gym's loyalty program.
+     */
+
     fun calculateDiscount(age: Int, isMember: Boolean): Int {
 
         return if (isMember) {
@@ -197,5 +203,31 @@ fun main() {
     }
 
     println("-------------------------------------------")
-    
+
+    /**             When Expression
+     *  When allows you to perform different actions based on the value of a variable or expression.
+     */
+
+    println("Page 18 -> When Expression")
+
+    // I've written a scenario about gym discount above. Let's use this with when expression.
+    fun calculateDiscountWithWhenExpression(age: Int, isMember: Boolean): Int {
+        return when {
+            isMember -> when {
+                age < 18 -> 10
+                age in 18..64 -> 20
+                else -> 30
+            }
+
+            else -> when {
+                age < 18 -> 5
+                age in 18..64 -> 15
+                else -> 25
+            }
+        }
+    }
+    println("Your discount is: ${calculateDiscountWithWhenExpression(24, false)}%")
+
+    println("-------------------------------------------")
+
 }
