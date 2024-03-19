@@ -327,9 +327,36 @@ fun main() {
     val listWithNulls: List<String?> = listOf("Apple", "Watermelon", null, "Banana")
     listWithNulls.forEach {fruit ->
         fruit?.let {
-            // Check if there is a null value and don't display it.
+            // Check if there is a null value and if there is, don't display it.
             println(it)
         }
+    }
+
+    println("-------------------------------------------")
+
+    /**         Type Checks and Automatic Casts
+     *  Type checks and automatic casts in Kotlin allow you to check the type of an object
+     *  and automatically cast it to the specified type if the check is successful.
+     *  This feature provides a convenient way to work with different types in a safe.
+     */
+    println("Page 22 -> Type Checks and Automatic Casts")
+
+    fun checkType(x: Any) {
+        when (x) {
+            is String -> println("It's a string.")
+            is Number -> println("It's a number.")
+            is Person -> println("It's a person.")
+            else -> println("None of them above.")
+        }
+    }
+    checkType(person)
+
+    // The compiler know the obj is an integer value.
+    val obj: Any = 22
+    if (obj is Int) {
+        println("It's an integer.")
+    } else {
+        println("Object is not an integer")
     }
 
     println("-------------------------------------------")
