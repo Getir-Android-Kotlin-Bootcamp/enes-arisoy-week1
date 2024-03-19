@@ -130,4 +130,36 @@ fun main() {
 
     println("-------------------------------------------")
 
+    /**
+     *              Control Flow
+     *  Control flow statements are used for making decisions based on conditions.
+     */
+    println("Page 15 -> Control Flow")
+
+    fun calculateDiscount(age: Int, isMember: Boolean): Int {
+
+        return if (isMember) {
+            if (age < 18) {
+                10
+            } else if (age in 18..64) {
+                20
+            } else {
+                30
+            }
+        } else {
+            if (age < 18) {
+                5
+            } else if (age in 18..64) {
+                15
+            } else {
+                25
+            }
+        }
+    }
+
+    println("Your discount is: ${calculateDiscount(18, true)}%")
+
+    println("-------------------------------------------")
+
+
 }
