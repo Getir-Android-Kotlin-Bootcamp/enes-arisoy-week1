@@ -179,4 +179,23 @@ fun main() {
 
     println("-------------------------------------------")
 
+    /**             While loop
+     *  A while loop is a control flow statement that repeatedly executes
+     *  a block of code as long as a given condition is true.
+     */
+    println("Page 17 -> While loop")
+
+    var index = 0
+
+    // The same task as the previous example using a while loop
+    while (index < fruitList.size) {
+        val fruit = fruitList[index]
+
+        println(fruit)
+
+        index++
+    }
+
+    println("-------------------------------------------")
+    
 }
