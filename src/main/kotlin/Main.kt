@@ -325,12 +325,15 @@ fun main() {
      */
 
     val listWithNulls: List<String?> = listOf("Apple", "Watermelon", null, "Banana")
-    listWithNulls.forEach {fruit ->
+    listWithNulls.forEach { fruit ->
         fruit?.let {
             // Check if there is a null value and if there is, don't display it.
             println(it)
         }
     }
+
+    // Of course, you can do the above algorithm with a simple function like this :)
+    println(listWithNulls.filterNotNull())
 
     println("-------------------------------------------")
 
@@ -351,12 +354,36 @@ fun main() {
     }
     checkType(person)
 
-    // The compiler know the obj is an integer value.
+    // The compiler knows the obj is an integer value.
     val obj: Any = 22
     if (obj is Int) {
         println("It's an integer.")
     } else {
         println("Object is not an integer")
+    }
+
+    println("-------------------------------------------")
+
+    /**             Traverse a map
+     *  Traversing a map in Kotlin involves iterating over its key-value pairs to access and process each entry.
+     */
+
+    println("Page 44 -> Traverse a map")
+
+    val studentMap = mapOf(
+        1001 to "Ali",
+        2234 to "Burak",
+        3232 to "Ceyda",
+        4003 to "Deniz"
+    )
+    for ((key, value) in studentMap.entries) {
+        println("Student number: $key, Name: $value")
+    }
+    println()
+
+    // Or you can do this with forEach
+    studentMap.entries.forEach { (key, value) ->
+        println("Student number: $key, Name: $value")
     }
 
     println("-------------------------------------------")
