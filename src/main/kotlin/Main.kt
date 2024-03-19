@@ -161,5 +161,22 @@ fun main() {
 
     println("-------------------------------------------")
 
+    /**             For loop
+     *  The for loop iterates through anything that provides an iterator.
+     */
+    println("Page 16 -> For loop")
+
+    /**
+     * Let's assume that you have received a list of fruits from an API.
+     * Your goal is to display the available fruits in the application and allow the user to add them to the cart.
+     * To achieve this, you want to display each fruit on a card individually.
+     * To do this, you need to separate those fruits one by one using a loop.
+     */
+    val fruitList = listOf("Apple", "Banana", "Pineapple", "Watermelon")
+    for (fruit in fruitList) {
+        println(fruit)
+    }
+
+    println("-------------------------------------------")
 
 }
