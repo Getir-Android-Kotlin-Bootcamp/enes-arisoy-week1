@@ -230,4 +230,27 @@ fun main() {
 
     println("-------------------------------------------")
 
+    /**             Ranges
+     * The range is a collection of finite values which is defined by endpoints.
+     * The range in Kotlin consists of a start, a stop, and the step
+     */
+
+    println("Page 19 -> Ranges")
+
+    // Example 1 -> Check if a person adult or not
+    val age = 24
+    fun isAdult(age: Int): Boolean = age in 18..65
+    if (isAdult(age)) {
+        println("This person is an adult.")
+    } else {
+        println("This person is not an adult.")
+    }
+
+    // Example 2 -> Give the even numbers within the specified range.
+    for (i in 0..10 step 2) {
+        println(i)
+    }
+
+    println("-------------------------------------------")
+
 }
