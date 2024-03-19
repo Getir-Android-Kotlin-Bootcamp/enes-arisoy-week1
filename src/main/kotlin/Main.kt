@@ -101,4 +101,33 @@ fun main() {
 
     println("-------------------------------------------")
 
+    /**         Strings
+     *  A string value is a sequence of characters in double quotes (" ") or triple quotes (""").
+     *  Strings are immutable.
+     *  Once you initialize a string, you can't change its value or assign a new value to it.
+     *
+     *  If you want to modify a string, you need to use functions provided by the String class,
+     *  and these functions create a new string object with the modified value
+     *  rather than modifying the original string in place.
+     */
+    println("Page 14 -> String")
+
+    // Double quotes
+    val greeting: String = "Hey!"
+
+    // String Templates -> Use $ sign if you want to use variable within string.
+    println("Hey $greeting")
+
+    // Escaping Characters
+    val escapedString: String = "This is a \"quoted\" string."
+    println(escapedString)
+
+    // String Functions
+    val str: String = "This is Enes from Getir Bootcamp."
+    println("This function converts all characters to uppercase -> ${str.uppercase()}")
+    println("This function converts all characters to uppercase -> ${str.lowercase()}")
+    println("This function extracts a portion of a string -> ${str.substring(8, 12)}")
+
+    println("-------------------------------------------")
+
 }
