@@ -16,5 +16,21 @@ fun main() {
 
     println("-------------------------------------------")
 
+    /**
+     *              Functions
+     *  It's a block of code that perform specific tasks.
+     */
+    println("Page 10 -> Functions")
+
+    println()
+    fun greet(name: String): String {
+        return "Hello $name"
+    }
+    println(greet("Enes"))
+    println()
+
+    println("-------------------------------------------")
+
+
 
 }
