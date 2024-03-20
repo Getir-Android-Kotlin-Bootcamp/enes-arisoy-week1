@@ -388,4 +388,39 @@ fun main() {
 
     println("-------------------------------------------")
 
+    /**             Lazy Property
+     *   A lazy property is a property whose value is computed only upon first access.
+     *   Lazy properties are useful when you have a property whose initialization is expensive or
+     *   takes considerable time, but it might not be needed immediately or at all during the lifecycle of the object.
+     */
+    println("Page 45 -> Lazy Property")
+
+    /**
+     *  Let's consider a scenario where you have a complex calculation that needs to be performed
+     *  only when certain conditions are met. You can use a lazy property to defer the computation
+     *  until it's actually required.
+     */
+    class Player(val totalXP: Int) {
+        private fun calculateLevel(): Int {
+            println("Calculating player's level...")
+            return totalXP / 100
+        }
+
+        // This code calculates the level. But only when the player wants to check it's level.
+        val level: Int by lazy {
+            calculateLevel()
+        }
+    }
+
+    val player = Player(2500)
+
+    println("Player's level is not calculated yet.")
+
+    // Trigger the level calculation
+    val level = player.level
+
+    println("Player's level: $level")
+
+    println("-------------------------------------------")
+
 }
