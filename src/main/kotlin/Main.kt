@@ -489,9 +489,63 @@ fun main() {
 
     println("-------------------------------------------")
 
+    /**             Abstract
+     *  an abstract class is a class marked with the abstract keyword, and it cannot be instantiated directly.
+     *  It serves as a blueprint for other classes to inherit from and provides common behavior
+     *  and properties that subclasses can override or implement.
+     */
+
+    println("Page 48 -> Abstract")
+
+    /**
+     *  Let's assume that you're developing Getir's grocery store feature where users can browse and purchase
+     *  various fruits and vegetables.  The application needs to display information about each fruit and vegetable,
+     *  including its name, availability (whether it's in stock or not), price per unit, and the quantity available in stock.
+     *  In this scenario, you've defined an abstract class "Food" to represent different food items. Such as fruits and
+     *  vegetables. Each fruit and vegetable object contains attributes such as its name, availability (isInStock),
+     *  price per unit (price), and the quantity available in stock (quantity).
+     */
+    class Fruit(
+        override val name: String,
+        override val isInStock: Boolean,
+        override val price: Double,
+        override val quantity: Int
+    ) : Food() {
+        override fun remainingStock(): Int {
+            return if (isInStock) quantity else 0
+        }
+    }
+    class Vegetable(
+        override val name: String,
+        override val isInStock: Boolean,
+        override val price: Double,
+        override val quantity: Int
+    ) : Food() {
+        override fun remainingStock(): Int {
+            return if (isInStock) quantity else 0
+        }
+    }
+
+    val banana = Fruit("Banana",true, 3.0, 10)
+    val spinach = Vegetable("Spinach",false, 3.0, 0)
+    println(banana.name)
+    println("${spinach.name} price: ${spinach.price.toInt()} TL")
+
+    println("-------------------------------------------")
+
 }
 
+// Abstract example. Line 492
+abstract class Food {
+    abstract val name: String
+    abstract val isInStock: Boolean
+    abstract val price: Double
+    abstract val quantity: Int
 
+    abstract fun remainingStock(): Int
+}
+
+// Singleton example. Line 458
 class Logger {
     companion object {
 
