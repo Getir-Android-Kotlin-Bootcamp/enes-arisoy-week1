@@ -455,4 +455,58 @@ fun main() {
 
     println("-------------------------------------------")
 
+    /**             Singleton
+     *   Singleton is a design pattern that ensures a class has only one instance and
+     *   provides a global point of access to that instance. This pattern is commonly used when you need to
+     *   create an object that should only have one instance throughout the entire lifetime of the application.
+     */
+
+    println("Page 47 -> Singleton")
+
+    /**
+     * Imagine you are developing a logging system for an application.
+     * You want to ensure that there is only one instance of the logger throughout
+     * the application, and all components can access and use this logger to record events,
+     * errors, and debug information.
+     */
+
+    val logger = Logger.getInstance()
+
+    logger.log("Application started.")
+    logger.log("Error occurred: NullPointerException")
+    logger.log("Debug information: User logged in.")
+
+    val anotherLogger = Logger.getInstance()
+    println("Are both instances the same? ${logger === anotherLogger}")
+
+    /**
+     *  So why do we need one instance?
+     *  Consistency -> All parts of the application log to the same destination with the same configuration
+     *      making it easier to manage and analyze the logs.
+     *  Resource Efficiency -> Logging can be resource intensive. Especially if it involves writing to files or
+     *      sending data over the network.If you have multiple instances of logger, it can be lead resource consumption.
+     */
+
+    println("-------------------------------------------")
+
+}
+
+
+class Logger {
+    companion object {
+
+        private var instance: Logger? = null
+
+        fun getInstance(): Logger {
+            if (instance == null) {
+                instance = Logger()
+            }
+            return instance!!
+        }
+
+    }
+
+    fun log(message: String) {
+        println("[LOG] $message")
+    }
 }
