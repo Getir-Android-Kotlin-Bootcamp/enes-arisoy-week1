@@ -813,10 +813,31 @@ fun main() {
      *  These default values are used when the function is called without providing values for those parameters.
      *  This feature simplifies function calls by allowing you to omit arguments for parameters with default values.
      *
-     *  Check the line 640. I've alread done this.
+     *  Check the line 640. I've already done this.
      */
 
     println("Page 67 -> Default Parameters")
+
+    println("-------------------------------------------")
+
+    /**             Infix Functions
+     *  It allows you to call functions using infix notation, where the function is called directly
+     *  on the object without using the dot notation or parentheses. This can lead to more concise and readable code
+     *  in certain scenarios.
+     */
+
+    println("Page 68 -> Infix Functions")
+
+    val fruitListInfix = mutableListOf<String>("Apple", "Banana", "Watermelon")
+
+    infix fun MutableList<String>.add(fruit: String) {
+        fruitListInfix.add(fruit)
+        println("$fruit added to cart.")
+    }
+
+    // Isn't it more readable than standard way??
+    fruitListInfix add "Pineapple"
+    println(fruitListInfix)
 
     println("-------------------------------------------")
 
