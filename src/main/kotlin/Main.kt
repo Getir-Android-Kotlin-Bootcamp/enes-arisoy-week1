@@ -808,6 +808,18 @@ fun main() {
 
     println("-------------------------------------------")
 
+    /**             Default Parameters
+     *  Default parameters allow you to define default values for function parameters.
+     *  These default values are used when the function is called without providing values for those parameters.
+     *  This feature simplifies function calls by allowing you to omit arguments for parameters with default values.
+     *
+     *  Check the line 640. I've alread done this.
+     */
+
+    println("Page 67 -> Default Parameters")
+
+    println("-------------------------------------------")
+
 }
 
 // Abstract example. Line 492
