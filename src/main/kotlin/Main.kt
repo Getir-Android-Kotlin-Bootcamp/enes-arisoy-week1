@@ -794,6 +794,19 @@ fun main() {
 
     println("-------------------------------------------")
 
+    /**             TODO()
+     *  It is a function that creates a placeholder indicating that some functionality is yet to be implemented.
+     *  It is commonly used as a temporary marker to remind developers to come back and complete a task.
+     */
+
+    println("Page 66 -> TODO")
+
+    // For example, you are willing to do login screen logic. But you need to do this later.
+    fun login() {
+        TODO()
+    }
+
+    println("-------------------------------------------")
 
 }
 
