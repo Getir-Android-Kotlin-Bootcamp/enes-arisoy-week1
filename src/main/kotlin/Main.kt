@@ -582,6 +582,47 @@ fun main() {
 
     println("-------------------------------------------")
 
+    /**             Try - Catch
+     *  Try-catch blocks are used for exception handling.
+     *  They allow you to handle exceptions that might occur during the execution of a block of code.
+     *  You should use try-catch blocks when you wait that a particular piece of code might throw an exception,
+     *  and you want to handle it without crashing the program.
+     */
+    println("Page 56 -> Try-Catch")
+
+    /**
+     *  Assume that you're in Getir development team and developing grocery feature again.
+     *  Customers can add items to their cart, but sometimes there might be issues with the
+     *  availability of item or network issue or errors during the checkout process. In such
+     *  cases you might want to handle any exceptions to ensure a trustful shopping experience
+     *  for the customers. Let's use this.
+     */
+
+    // Create a custom exception for handling out of stock items
+    class OutOfStockException(message: String) : Exception(message)
+
+    fun checkAvailability(food: String): Boolean {
+        val isAvailable = Random().nextBoolean()
+        if (!isAvailable) {
+            throw OutOfStockException(message = "$food is out of stock.")
+        }
+        return isAvailable
+    }
+
+    fun addToCart(food: String) {
+        try {
+            if (checkAvailability(food)) {
+                println("$food added to cart.")
+            }
+        } catch (e: OutOfStockException) {
+            println("Unfortunately ${e.message}")
+        }
+    }
+
+    addToCart("Banana")
+
+    println("-------------------------------------------")
+
 }
 
 // Abstract example. Line 492
