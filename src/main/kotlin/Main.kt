@@ -658,6 +658,38 @@ fun main() {
 
     println("-------------------------------------------")
 
+    /**             With Function
+     *  Well, it's not an extension function as 'apply'. Kotlin recommend this when you use for calling functions
+     *  on the context object and when you don't need to use the returned value.
+     */
+
+    println("Page 61 -> With Function")
+
+    /**
+     *  It's a very common problem of kotlin community that when should we use 'with' or 'apply'?
+     *  Usually you use 'apply' when you need to do something with an object and return it.
+     *  And when you need to perform some operations on an object
+     *  and return some other object you can use either 'with' or 'run'.
+     *
+     *  And also when you work with nullable objects, you need to use 'apply' instead of 'with'.
+     */
+
+    val watermelon = FoodItem()
+    with(watermelon) {
+        foodName = "Watermelon"
+        quantity = (0..10).random()
+        isInStock = quantity != 0
+        price = 15.0
+    }
+
+    val isWatermelonAvailable =
+        if (watermelon.isInStock) "${watermelon.foodName} is in stock. We have ${watermelon.quantity} watermelons. :)"
+        else "Unfortunately we don't have watermelons right now. :("
+
+    println(isWatermelonAvailable)
+
+    println("-------------------------------------------")
+
 }
 
 // Abstract example. Line 492
