@@ -1,5 +1,8 @@
 package org.example
 
+import java.text.SimpleDateFormat
+import java.util.*
+
 fun main() {
 
     /**
@@ -420,6 +423,35 @@ fun main() {
     val level = player.level
 
     println("Player's level: $level")
+
+    println("-------------------------------------------")
+
+    /**             Extension Functions
+     *  An extension function in Kotlin allows you to add new functionality to
+     *  existing classes without modifying their source code. This is particularly useful
+     *  when you want to add utility methods to classes from external libraries
+     *  or even your own classes without subclassing or modifying their source code directly.
+     */
+
+    println("Page 46 -> Extension Functions")
+
+    /**
+     *  Let's suppose you are working with 'Date' class in kotlin. And you need to format the date
+     *  based on your country's default date format.
+     *  For example USA uses date format like this yyyy-MM-dd
+     *  But Turkey, uses like this -> dd-MM-yyyy. So by default date format comes with USA style.
+     *  Let's set the date format like Turkish style.
+     */
+    fun Date.formatToTurkishStyle(pattern: String = "dd-MM-yyyy HH:mm:ss"): String {
+        val formatter = SimpleDateFormat(pattern)
+        return formatter.format(this)
+    }
+
+    val currentDate = Date()
+    // One of my favorite feature in Kotlin tbh :D
+    val formattedDate = currentDate.formatToTurkishStyle()
+
+    println("Formatted Date: $formattedDate")
 
     println("-------------------------------------------")
 
