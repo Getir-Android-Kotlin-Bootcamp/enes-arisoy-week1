@@ -737,6 +737,7 @@ fun main() {
          *  simply copy the inlined code of that function at the calling place.
          *
          *  So I can use inline keyword for all function that I've made. Isn't it correct?
+         *
          *  No, you shouldn't user inline keyword for all functions.
          *  1. If you have a simple function that doesn't accept other functions as an argument,
          *      it does not make sense to inline them.
@@ -747,6 +748,7 @@ fun main() {
          *      where code size is a concern, avoid inlining. Compilation time takes too long.
          *
          *  What about reified?
+         *
          *  The purpose of reified is to allow the function to use T at compile time (to access it within the function).
          */
     }
@@ -768,6 +770,30 @@ fun main() {
     println("Fruits in the inventory: ${fruitsGeneric.joinToString(", ") { it.name }}")
 
     println("-------------------------------------------")
+
+    /**             Also Function
+     *  The 'also' function is an extension function defined on any object.
+     *  It executes the given block of code on the object and returns the same object.
+     *  It is particularly useful when you want to perform some additional actions on
+     *  an object without changing its state and then continue working with the same object.
+     */
+
+    println("Page 65 -> Also Function")
+
+    val person2 = Person()
+    person2.name = "Enes"
+    person2.age = 24
+
+    val personWithAlso = person.also {
+        it.name = "Ceren"
+        it.age = 23
+    }
+
+    println("Person with also: ${personWithAlso.name}")
+    println("Original person: ${person2.name}")
+
+    println("-------------------------------------------")
+
 
 }
 
