@@ -569,6 +569,19 @@ fun main() {
 
     println("-------------------------------------------")
 
+    println("Page 55 -> Return When Expression")
+
+    fun getFoodType(food: String): String {
+        return when (food) {
+            "Apple", "Banana", "Orange" -> "Fruit"
+            "Spinach", "Broccoli", "Carrot" -> "Vegetable"
+            else -> "Unknown"
+        }
+    }
+    println("Type of Banana: ${getFoodType("Banana")}")
+
+    println("-------------------------------------------")
+
 }
 
 // Abstract example. Line 492
