@@ -515,6 +515,7 @@ fun main() {
             return if (isInStock) quantity else 0
         }
     }
+
     class Vegetable(
         override val name: String,
         override val isInStock: Boolean,
@@ -526,10 +527,27 @@ fun main() {
         }
     }
 
-    val banana = Fruit("Banana",true, 3.0, 10)
-    val spinach = Vegetable("Spinach",false, 3.0, 0)
+    val banana = Fruit("Banana", true, 3.0, 10)
+    val spinach = Vegetable("Spinach", false, 3.0, 0)
     println(banana.name)
     println("${spinach.name} price: ${spinach.price.toInt()} TL")
+
+    println("-------------------------------------------")
+
+    /**             If Not Null Shorthand (Safe Call)
+     *  It is a concise way to perform a null-check on an object and execute a block of code
+     *  only if the object is not null.
+     *
+     *  Safe Call Operator (?.): The safe call operator allows you to access properties or
+     *  call functions on an object without the risk of throwing a NullPointerException if the object is null.
+     *  If the object is null, the expression returns null instead of causing an exception.
+     *
+     *  Elvis operator (?:) -> It is used to provide a default value when the expression to its left is null.
+     */
+    println("Page 49 -> If Not Null Shorthand (Safe Call)")
+
+    val nullableVariable: String? = null
+    println(nullableVariable?.lowercase() ?: "It's null.")
 
     println("-------------------------------------------")
 
