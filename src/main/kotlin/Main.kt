@@ -623,6 +623,41 @@ fun main() {
 
     println("-------------------------------------------")
 
+    /**             Apply Function
+     *   An extension function that is defined on any object. It allows you to execute a block of code
+     *   on an object within the context of that object itself. The apply function returns the object
+     *   it was called on after applying the transformations specified in the block.
+     *
+     *   Why should I use this?
+     *   It provides a concise and fluent way to initialize or configure objects,
+     *   especially when you need to set multiple properties or perform multiple operations on the same object.
+     *   You will use this when you want to set up RecyclerView :)
+     */
+
+    println("Page 59 -> Apply Function")
+
+    // Let's use this apply function with Getir grocery store example.
+    class FoodItem(
+        var foodName: String = "",
+        var isInStock: Boolean = false,
+        var quantity: Int = 0,
+        var price: Double = 0.0
+    )
+
+    val apple = FoodItem().apply {
+        foodName = "Apple"
+        quantity = Random().nextInt(11)
+        isInStock = quantity != 0
+        price = 9.0
+    }
+    val isAppleAvailable =
+        if (apple.isInStock) "${apple.foodName} is in stock. We have ${apple.quantity} apples. :)"
+        else "Unfortunately we don't have apples right now. :("
+
+    println(isAppleAvailable)
+
+    println("-------------------------------------------")
+
 }
 
 // Abstract example. Line 492
