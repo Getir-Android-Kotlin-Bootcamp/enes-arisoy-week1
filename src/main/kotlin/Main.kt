@@ -551,6 +551,24 @@ fun main() {
 
     println("-------------------------------------------")
 
+    /**             Let Function
+     *  The let function is a scoping function in Kotlin that executes the
+     *  specified block of code if the object is not null. Inside the let block,
+     *  you can refer to the non-null object using the 'it' keyword.
+     */
+
+    println("Page 50 -> Let Function")
+
+    val letExample: String? = "Enes"
+
+    letExample?.let {
+        println("My name is $it")
+    } ?: run {
+        println("I'm afraid it's a null variable.")
+    }
+
+    println("-------------------------------------------")
+
 }
 
 // Abstract example. Line 492
