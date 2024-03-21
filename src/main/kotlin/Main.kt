@@ -941,6 +941,35 @@ fun main() {
 
     println("-------------------------------------------")
 
+    /**             Data class
+     *  Data classes in Kotlin are primarily used to hold data. For each data class,
+     *  the compiler automatically generates additional member functions that allow you to print
+     *  an instance to readable output, compare instances, copy instances, and more.
+     *
+     *  Data classes automatically provide implementations for methods like
+     *  toString(), equals(), hashCode(), and copy(), componentN() based on the properties declared in the primary constructor.
+     *
+     *  The primary constructor must have at least one parameter. Well, you need to hold data right? So where is the data then?
+     *
+     *  All primary constructor parameters must be marked as val or var. Otherwise, componentN methods won't be created.
+     *
+     *  Data classes can't be abstract, open, sealed, or inner.
+     */
+
+    println("Page 92 -> Data class")
+
+    data class FoodItem3(val foodName: String, val price: Double)
+
+    val apple3 = FoodItem3("Apple", 3.0)
+    val banana3 = FoodItem3("Banana", 7.0)
+    val orange3 = FoodItem3("Orange", 1.0)
+
+    println(apple3)
+    println(banana3)
+    println(orange3)
+
+    println("-------------------------------------------")
+
 }
 
 // Abstract example. Line 492
