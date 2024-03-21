@@ -907,6 +907,40 @@ fun main() {
 
     println("-------------------------------------------")
 
+    /**             Equality Checks
+     *  Equality check is the process of comparing two objects or values to determine if they are equal or not.
+     *
+     *  In Kotlin, there are two types of equality checks:
+     *
+     * Structural equality (==): This checks if the contents of two objects are the same.
+     * Referential equality (===): This checks if two references point to the same object in memory.
+     *
+     * You would use equality checks in Kotlin to compare objects or values in various scenarios to determine
+     * if they are equal. This can be useful when you need to verify if two objects have the same content or
+     * if they refer to the same object.
+     */
+
+    println("Page 88 -> Equality Checks")
+
+    /**
+     *  Suppose we have a FoodItem class representing items available at the Getir grocery store.
+     *  We want to check if two grocery items are equal based on their names and prices.
+     */
+
+    data class FoodItem2(val foodName: String, val price: Double)
+
+    val apple1 = FoodItem2(foodName = "Apple", price = 8.0)
+    val apple2 = FoodItem2(foodName = "Apple", price = 8.0)
+    val banana1 = FoodItem2(foodName = "Banana", price = 12.0)
+
+    println("Are apple1 and apple2 equal? ${apple1 == apple2}")
+    println("Are apple1 and banana equal? ${apple1 == banana1}")
+
+    println("Are apple1 and apple2 the same object? ${apple1 === apple2}")
+    println("Are apple1 and apple1 the same object? ${apple1 === apple1}")
+
+    println("-------------------------------------------")
+
 }
 
 // Abstract example. Line 492
