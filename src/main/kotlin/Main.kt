@@ -841,6 +841,28 @@ fun main() {
 
     println("-------------------------------------------")
 
+    println("Page 69 -> Operator Functions")
+
+    /**             Operator Functions
+     *  Operator functions allow you to define custom behaviors for built-in operators like +, -, *, /, ==, !=, and so on.
+     *  This can be useful when you want to provide custom functionality for specific operations on your own types.
+     */
+
+    class Counter(var value: Int) {
+        operator fun plusAssign(increment: Int) {
+            value += increment
+        }
+    }
+
+    val counter = Counter(5)
+
+    // Use operator fun with +=
+    counter += 3
+
+    println("Counter value after increment: ${counter.value}")
+
+    println("-------------------------------------------")
+
 }
 
 // Abstract example. Line 492
