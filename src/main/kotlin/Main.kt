@@ -841,12 +841,13 @@ fun main() {
 
     println("-------------------------------------------")
 
-    println("Page 69 -> Operator Functions")
 
     /**             Operator Functions
      *  Operator functions allow you to define custom behaviors for built-in operators like +, -, *, /, ==, !=, and so on.
      *  This can be useful when you want to provide custom functionality for specific operations on your own types.
      */
+
+    println("Page 69 -> Operator Functions")
 
     class Counter(var value: Int) {
         operator fun plusAssign(increment: Int) {
@@ -860,6 +861,26 @@ fun main() {
     counter += 3
 
     println("Counter value after increment: ${counter.value}")
+
+    println("-------------------------------------------")
+
+    println("Page 70 -> Vararg")
+
+    // So you can add infinite item if you want. It takes vararg as parameter.
+    fun calculateTotalPrice(vararg items: FoodItem): Double {
+        var totalPrice = 0.0
+        items.forEach {
+            totalPrice += it.price
+        }
+        return totalPrice
+    }
+
+    val appleVararg = FoodItem(foodName = "Apple", price = 9.0)
+    val bananaVararg = FoodItem(foodName = "Banana", price = 19.0)
+    val carrotVararg = FoodItem(foodName = "Carrot", price = 7.0)
+    val orangeVararg = FoodItem(foodName = "Orange", price = 8.0)
+
+    println("Total price is -> ${calculateTotalPrice(appleVararg, bananaVararg, carrotVararg, orangeVararg)}")
 
     println("-------------------------------------------")
 
