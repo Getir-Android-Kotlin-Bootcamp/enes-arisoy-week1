@@ -884,6 +884,29 @@ fun main() {
 
     println("-------------------------------------------")
 
+    // Page 77 Inheritance -> Check line 716 for instance.
+    // Page 78 Inheritance with Parameterized Constructor -> Check line 602 for instance.
+
+    println("Page 83-84 -> While and Do-while loops.")
+
+    var count = 0
+
+    println("While loop:")
+    while (count < 3) {
+        println("Count is $count")
+        count++
+    }
+
+    count = 0
+
+    println("Do-while loop:")
+    do {
+        println("Count is $count")
+        count++
+    } while (count < 3)
+
+    println("-------------------------------------------")
+
 }
 
 // Abstract example. Line 492
