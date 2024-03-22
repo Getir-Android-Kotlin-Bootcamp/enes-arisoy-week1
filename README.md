@@ -1,0 +1,1 @@
+This repository is about homework assignment. It contains Kotlin basics. I tried to explain the concepts with comment lines. And provided the reader with a real-life scenario to understand the concept.
